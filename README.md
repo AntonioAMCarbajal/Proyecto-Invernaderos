@@ -56,13 +56,18 @@ Para instalar en otros Sistemas Operativos: https://nodered.org/docs/getting-sta
 #### 3.- Instalación de XAMPP
 XAMPP es una distribución de Apache completamente gratuita y fácil de instalar que contiene MariaDB, PHP y Perl. El paquete de instalación de XAMPP ha sido diseñado para ser fácil de instalar y usar. Consulte el siguiente enlace: https://www.apachefriends.org/es/index.html
 
-### Adecuaciones en la plataforma Arduino IDE
+### Configuraciones previas al desarrollo del proyecto
+
+#### Configuración en la plataforma Arduino IDE
 Las tarjeta de desarrollo ESP32 es programable utilizando micropython, un lenguaje de programación desarrollado para microcontroladores. Sin embargo, para este proyecto se utilizará el entorno de Arduino para facilitar la programación debido a su sintaxis y sus similitudes con el lenguaje C.
-El primer paso para programar la ESP32 en arduino es dirigirse a la pestaña principal "File" y posteriormente seleccionar la opción de "Preferences". Este ultimo paso mostrara una ventana con dos pestañas: "Settings" y "Network". En la pestaña de "Settings" es necesario localizar ...
+El primer paso para programar la ESP32 en arduino es dirigirse a la pestaña principal "File" y posteriormente seleccionar la opción de "Preferences". Este ultimo paso mostrara una ventana con dos pestañas: "Settings" y "Network". En la pestaña de "Settings" es necesario localizar la opción "Additional boards manager URLs" y pegar el siguiente enlace: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json . 
+
+En la siguiente imagen se muestra el resultado de seguir estos pasos:
 
 ![Administrador de tarjetas en arduino](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Administrador%20de%20tarjetas%20en%20arduino.PNG)
 
-Enlace para descargar la tarjeta ESP32: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json
+#### Configuración de los nodos en Node-RED
+ 
 ## Desarrollo del proyecto
 
 
