@@ -50,14 +50,17 @@ Para instalar en otros Sistemas Operativos: https://nodered.org/docs/getting-sta
 #### 3.- Instalación de XAMPP
 XAMPP es una distribución de Apache completamente gratuita y fácil de instalar que contiene MariaDB, PHP y Perl. El paquete de instalación de XAMPP ha sido diseñado para ser fácil de instalar y usar. Consulte el siguiente enlace: https://www.apachefriends.org/es/index.html
 
+Enlace para descargar la tarjeta ESP32: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json
+
+![Administrador de tarjetas en arduino](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Administrador%20de%20tarjetas%20en%20arduino.PNG)
 
 ## Desarrollo tecnico del proyecto
 
-Enlace para descargar la tarjeta ESP32: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json
-
 ### Diagrama de conexión
-![Administrador de tarjetas en arduino](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Administrador%20de%20tarjetas%20en%20arduino.PNG)
+El sistema en general se dividirá en 3 partes, siendo la primera la adquisición de las variables: temperatura, humedad y radiación dentro del tunel del invernadero. Esta información viajará hasta la segunda etapa, que es el procesamiento de la información a través de una tarjeta de desarrollo ESP32 que enviará la información por Wi-Fi gracias al protocolo de comunicación MQTT, elegido por el bajo consumo en recursos dentro del microcontrolador. Por ultimo, la etapa de visualización de la información por medio de un dashboard con graficas de las variables, las cuales se van almacenando en una base de datos. La siguiente figura ejemplifica el sistema:
+
 ![Diagrama general del sistema](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Diagrama%20general%20del%20sistema.PNG)
+
 ### Codigo general
 
 ### Dashboard en Node-RED
