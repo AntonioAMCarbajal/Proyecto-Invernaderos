@@ -1,7 +1,7 @@
 # Proyecto de monitoreo de invernadero tecnificado
 
-### Centro de Innovación e Integración de Tecnologías Avanzadas Unidad Veracruz
-
+### Centro de Innovación e Integración de Tecnologías Avanzadas 
+### Unidad Veracruz
 ### Fecha: 17 de abril de 2023
 
 ### Elaborado por:
@@ -10,7 +10,6 @@
 
 ### Identificación del problema 
 Para obtener un buen cultivo de cualquier hortaliza es necesario que se encuentre dentro de las condiciones ambientales adecuadas como lo son principalmente: temperatura, humedad y radiación, esto por lo general no puede ser garantizado en ambientes no controlados como son los cultivos al aire libre. El desconocimiento de los parámetros anteriormente mencionados, afectan las camas de cultivo provocando una baja en la producción de la planta y la calidad del fruto, incluso no ser apto para consumo humano. 
-
 
 ### Objetivo general:
 Diseñar un sistema de monitoreo en un invernadero dentro del Centro de Innovación e Integración de Tecnologías Avanzadas, Unidad Veracruz, que permita la visualización de las variables atmosféricas mediante gráficas. 
@@ -41,7 +40,8 @@ XAMPP es una distribución de Apache completamente gratuita y fácil de instalar
 Enlace para descargar la tarjeta ESP32: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json
 
 ### Diagrama de conexión
-
+![Administrador de tarjetas en arduino](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Administrador%20de%20tarjetas%20en%20arduino.PNG)
+![Diagrama general del sistema](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Diagrama%20general%20del%20sistema.PNG)
 ### Codigo general
 
 ### Dashboard en Node-RED
