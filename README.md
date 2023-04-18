@@ -22,7 +22,22 @@ Diseñar un sistema de monitoreo en un invernadero dentro del Centro de Innovaci
 
 ## Desarrollo tecnico del proyecto
 
-### Adecuaciones antes de realizar el proyecto
+### Instalación de programas
+
+#### 1.- Instalación de Arduino
+Arduino ofrece hardware y software libre, lo que permite desarrollar código en su plataforma, compartirlo en la comunidad y programar las tarjetas de desarrollo que ofrece dicha marca. Descarga Arduino IDE: https://www.arduino.cc/en/software
+
+Nota: es necesario contar con un Arduino Mega 2560, debido a que el código está enfocado en los recursos que tiene esta tarjeta.
+
+#### 2.- Instalación de Node-RED
+Node-RED es una herramienta de programación para conectar dispositivos de hardware, API y servicios en línea. Si desea profundizar más en esta herramienta siga el siguiente enlace: https://nodered.org/ 
+
+Para la instalación en Windows diríjase al siguiente enlace que detalla los comandos y herramientas a descargar para correr Node-RED en Windows: https://nodered.org/docs/getting-started/windows 
+
+Para instalar en otros Sistemas Operativos: https://nodered.org/docs/getting-started/local
+
+#### 3.- Instalación de XAMPP
+XAMPP es una distribución de Apache completamente gratuita y fácil de instalar que contiene MariaDB, PHP y Perl. El paquete de instalación de XAMPP ha sido diseñado para ser fácil de instalar y usar. Consulte el siguiente enlace: https://www.apachefriends.org/es/index.html
 Enlace para descargar la tarjeta ESP32: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json
 
 ### Diagrama de conexión
