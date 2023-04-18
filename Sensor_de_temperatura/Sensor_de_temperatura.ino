@@ -29,15 +29,11 @@ void setup() {
  
 void loop() {
     // Mandamos comandos para toma de temperatura a los sensores
-    Serial.println("Mandando comandos a los sensores");
     sensorDS18B20.requestTemperatures();
  
     // Leemos y mostramos los datos de los sensores DS18B20
     Serial.print("Temperatura sensor 0: ");
     Serial.print(sensorDS18B20.getTempCByIndex(0));
-    Serial.println(" C");
-    Serial.print("Temperatura sensor 1: ");
-    Serial.print(sensorDS18B20.getTempCByIndex(1));
     Serial.println(" C");
     
     delay(1000); 
