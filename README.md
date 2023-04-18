@@ -20,11 +20,25 @@ Diseñar un sistema de monitoreo en un invernadero dentro del Centro de Innovaci
 - Diseñar el código para la tarjeta de desarrollo que vincule los sensores y la comunicación inalámbrica. 
 - Desarrollar las gráficas en plataformas libres, a partir de los datos recolectados por la tarjeta de desarrollo ESP32. 
 
+### Equipo
+1. Cautin
+2. Mototool Dremel
+3. Multimetro
 
-## Desarrollo tecnico del proyecto
+### Material
+1. Devkit ESP32 V1
+2. Sensor de temperatura
+3. Sensor de humedad
+4. Sensor de radiación UV
+5. Placa fenolica
+6. Estaño
+7. Pasta para soldadura
+8. Cable
+9. Bateria de 5 - 9 V
+10. Cortador 1/32 y 1/16
+11. Cloruro ferrico
 
 ### Instalación de programas
-
 #### 1.- Instalación de Arduino
 Arduino ofrece hardware y software, a través de tarjetas de desarrollo y entornos de desarrollo integrado, este ultimo se ha actualizado para permitir desarrollar código en placas de desarrollo diferentes, tal es el caso de las ESP32. La descarga del entorno de desarrollo Arduino IDE lo podrá encontrar en el siguiente enlace: https://www.arduino.cc/en/software
 
@@ -35,6 +49,10 @@ Para instalar en otros Sistemas Operativos: https://nodered.org/docs/getting-sta
 
 #### 3.- Instalación de XAMPP
 XAMPP es una distribución de Apache completamente gratuita y fácil de instalar que contiene MariaDB, PHP y Perl. El paquete de instalación de XAMPP ha sido diseñado para ser fácil de instalar y usar. Consulte el siguiente enlace: https://www.apachefriends.org/es/index.html
+
+
+## Desarrollo tecnico del proyecto
+
 Enlace para descargar la tarjeta ESP32: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json
 
 ### Diagrama de conexión
