@@ -38,7 +38,13 @@ Diseñar un sistema de monitoreo en un invernadero dentro del Centro de Innovaci
 10. Cortador 1/32 y 1/16
 11. Cloruro ferrico
 
-### Instalación de programas
+### Diagrama de conexión
+El sistema en general se dividirá en 3 partes, siendo la primera la adquisición de las variables: temperatura, humedad y radiación dentro del tunel del invernadero. Esta información viajará hasta la segunda etapa, que es el procesamiento de la información a través de una tarjeta de desarrollo ESP32 que enviará la información por Wi-Fi gracias al protocolo de comunicación MQTT, elegido por el bajo consumo en recursos dentro del microcontrolador. Por ultimo, la etapa de visualización de la información por medio de un dashboard con graficas de las variables, las cuales se van almacenando en una base de datos. La siguiente figura ejemplifica el sistema:
+
+![Diagrama general del sistema](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Diagrama%20general%20del%20sistema.PNG)
+
+
+### Instalación de programas utilizados en el proyecto
 #### 1.- Instalación de Arduino
 Arduino ofrece hardware y software, a través de tarjetas de desarrollo y entornos de desarrollo integrado, este ultimo se ha actualizado para permitir desarrollar código en placas de desarrollo diferentes, tal es el caso de las ESP32. La descarga del entorno de desarrollo Arduino IDE lo podrá encontrar en el siguiente enlace: https://www.arduino.cc/en/software
 
@@ -50,16 +56,16 @@ Para instalar en otros Sistemas Operativos: https://nodered.org/docs/getting-sta
 #### 3.- Instalación de XAMPP
 XAMPP es una distribución de Apache completamente gratuita y fácil de instalar que contiene MariaDB, PHP y Perl. El paquete de instalación de XAMPP ha sido diseñado para ser fácil de instalar y usar. Consulte el siguiente enlace: https://www.apachefriends.org/es/index.html
 
-Enlace para descargar la tarjeta ESP32: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json
+### Adecuaciones en la plataforma Arduino IDE
+Las tarjeta de desarrollo ESP32 es programable utilizando micropython, un lenguaje de programación desarrollado para microcontroladores. Sin embargo, para este proyecto se utilizará el entorno de Arduino para facilitar la programación debido a su sintaxis y sus similitudes con el lenguaje C.
+El primer paso para programar la ESP32 en arduino es dirigirse a la pestaña principal "File" y posteriormente seleccionar la opción de "Preferences". Este ultimo paso mostrara una ventana con dos pestañas: "Settings" y "Network". En la pestaña de "Settings" es necesario localizar ...
 
 ![Administrador de tarjetas en arduino](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Administrador%20de%20tarjetas%20en%20arduino.PNG)
 
-## Desarrollo tecnico del proyecto
+Enlace para descargar la tarjeta ESP32: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json
+## Desarrollo del proyecto
 
-### Diagrama de conexión
-El sistema en general se dividirá en 3 partes, siendo la primera la adquisición de las variables: temperatura, humedad y radiación dentro del tunel del invernadero. Esta información viajará hasta la segunda etapa, que es el procesamiento de la información a través de una tarjeta de desarrollo ESP32 que enviará la información por Wi-Fi gracias al protocolo de comunicación MQTT, elegido por el bajo consumo en recursos dentro del microcontrolador. Por ultimo, la etapa de visualización de la información por medio de un dashboard con graficas de las variables, las cuales se van almacenando en una base de datos. La siguiente figura ejemplifica el sistema:
 
-![Diagrama general del sistema](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Diagrama%20general%20del%20sistema.PNG)
 
 ### Codigo general
 
