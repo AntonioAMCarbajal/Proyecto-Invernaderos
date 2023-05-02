@@ -66,6 +66,12 @@ En la siguiente imagen se muestra el resultado de seguir estos pasos:
 
 ![Administrador de tarjetas en arduino](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Administrador%20de%20tarjetas%20en%20arduino.PNG)
 
+Despues de colocar el enlace, es necesario ir al "manage board" de arduino que encontrará en la pestaña "" esto con el fin de descargar las tarjetas de desarrollo basadas en el módulo ESP32.
+![Manage board]()
+
+Por ultimo, es importante seleccionar la tarjeta de desarrollo DEVKIT V1 ESP32 en Arduino para cargar el código desarrollado en este proyecto.
+![Selección de la tarjeta de desarrollo]()
+
 #### Configuración de los nodos en Node-RED
  
 ## Desarrollo del proyecto
