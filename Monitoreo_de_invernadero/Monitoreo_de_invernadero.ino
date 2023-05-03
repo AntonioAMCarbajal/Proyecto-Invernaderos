@@ -25,22 +25,22 @@
 // Constastes
 #define DHTPIN 25                                                   // Conexión al pin 25 del esp32
 #define DHTTYPE DHT22                                               // Sensor de temperatura y humedad DHT22
-#define sensor_hum1 34                                              // Sensor de humedad no capacitivo
-#define sensor_hum2 35                                              // Sensor de humedad capacitivo
+#define sensor_hum1 35                                              // Sensor de humedad no capacitivo
+#define sensor_hum2 1                                               // Sensor de humedad capacitivo
 #define sensor_temp 32                                              // Sensor de temperatura ds18b20
-#define sensor_radiacion 26                                         // Sensor de radiación UV
+#define sensor_radiacion 34                                         // Sensor de radiación UV
 #define LED 2                                                       // LED de la esp32
 
 // Bibliotecas a utilizar
 #include <WiFi.h>                                                   // Biblioteca para el control de WiFi
 #include <PubSubClient.h>                                           // Biblioteca para conexion MQTT
-#include "DHT.h"                                                    // Biblioteca para usar el sensor DHT22
+//#include "DHT.h"                                                    // Biblioteca para usar el sensor DHT22
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
 // Datos de WiFi a conectar
-const char* ssid = "INFINITUM4956_2.4";//"Wi-Fi IPN";             // Aquí se debe poner el nombre de la red
-const char* password = "Carbajal2104";//"";                       // Aquí se debe poner la contraseña de la red
+const char* ssid = "Wi-Fi IPN";//"INFINITUM4956_2.4";             // Aquí se debe poner el nombre de la red
+const char* password = "";//"Carbajal2104";                       // Aquí se debe poner la contraseña de la red
 
 // Constantes del programa
 const int aire_sensor1 = 1023;                                       // Sensor de humedad no capacitivo, lectura en el aire
@@ -53,7 +53,22 @@ IPAddress server (192,168,1,74);                                 // Otras IP (19
 // Objetos del programa
 WiFiClient espClient;                                               // Este objeto maneja los datos de conexion WiFi
 PubSubClient client(espClient);                                     // Este objeto maneja los datos de conexion al broker
-DHT dht(DHTPIN,DHTTYPE);                                            // Este objeto maneja el sensor DHT22
+//DHT dht(DHTPIN,DHTTYPE);                                            // Este objeto maneja el sensor DHT22
+
+
+// Variables del sensor de radiacion
+float Sensorvalor;
+float Sensorvoltaje;
+int radiacion;
+
+// Variables del sensor de humedad
+const int aire_sensor = 1023;
+const int agua_sensor = 345;
+int sensor;
+int salida;
+
+// Variables de sensor de temperatura
+const int pinDatosDQ = 32;
 OneWire oneWireObjeto(sensor_temp);
 DallasTemperature sensorDS18B20(&oneWireObjeto);
 
@@ -66,15 +81,15 @@ int wait = 5000;                                                    // Indica la
 int t;
 
 // Variables del sistema
-int hum = 0;
-int temp_ds18b20 = 0;
-int radiacion = 0;
-int salida = 0;
-int sensor = 0;
-float sensorvoltaje = 0.0;
-float sensorvalue = 0.0;
-float temp_dht22 = 0.0;
-float hum_dht22 = 0.0;
+//int hum = 0;
+//int temp_ds18b20 = 0;
+//int radiacion = 0;
+//int salida = 0;
+//int sensor = 0;
+//float sensorvoltaje = 0.0;
+//float sensorvalue = 0.0;
+//float temp_dht22 = 0.0;
+//float hum_dht22 = 0.0;
 String json;                                                        // Variable que almacena la cadena de caracteres en formato JSON
 
 // Prototipo de funciones
@@ -90,7 +105,7 @@ void setup() {
   pinMode(sensor_hum2,INPUT);                                     // Sensor de humedad capacitivo
   pinMode(sensor_temp,INPUT);                                     // Sensor de temperatura ds18b20
 
-  dht.begin();                                                    // Iniciando el DHT22
+  //dht.begin();                                                    // Iniciando el DHT22
   Serial.begin(115200);                                           // Iniciando el puerto serial de la ESP32
   sensorDS18B20.begin();
 
@@ -147,12 +162,16 @@ void loop(){
     funcion_temperaturawire();
 
     // Se construye el string en formato JSON
-    json = "{\"temperatura_ds18b20\":\""+String(temp_ds18b20)+"\""+
+    json = "{\"temperatura_ds18b20\":\""+String(sensorDS18B20.getTempCByIndex(0))+"\""+
+           ",\"humedad_1\":\""+String(sensor)+"\""+
+           ",\"radiacionUV\":\""+String(radiacion)+"\""+"\"}";
+
+    /*json = "{\"temperatura_ds18b20\":\""+String(temp_ds18b20)+"\""+
            ",\"humedad_1\":\""+String(hum)+"\""+
            ",\"humedad_2\":\""+String(3)+"\""+
            ",\"radiacionUV\":\""+String(radiacion)+"\""+
            ",\"humedad_DHT22\":\""+String(hum_dht22)+"\""+
-           ",\"temperatura_DHT22\":\""+String(temp_dht22)+"\"}";
+           ",\"temperatura_DHT22\":\""+String(temp_dht22)+"\"}";*/
 
     Serial.println(json);                                         // Se imprime en monitor solo para poder visualizar que el string esta correctamente creado
     int str_len = json.length() + 1;                              // Se calcula la longitud del string
@@ -219,25 +238,67 @@ void reconnect() {
 }
 
 void funcion_humedad() {
-    sensor = analogRead(34)/4;
-      
-    if ((sensor >= agua_sensor1) && (sensor <= aire_sensor1)){
-      hum = map(sensor,aire_sensor1,agua_sensor1,0,100);
-    }
+  sensor = analogRead(35);
+  Serial.print("Valor detectado: ");
+  Serial.println(sensor);
+
+  if ((sensor >= agua_sensor) && (sensor <= aire_sensor)){
+    salida = map(sensor,aire_sensor,agua_sensor,0,100);
+  }
+  else {
+    Serial.println("Error en la lectura.");
+  }
+
+  Serial.print("Porcentaje de Humedad: ");
+  Serial.println(salida);
+  Serial.println("");
 }
 
 void funcion_radiacion() {
-  sensorvalue = analogRead(sensor_radiacion);
-  sensorvoltaje = sensorvalue / 1024 *5.0;
-  radiacion = sensorvoltaje;
+  Sensorvalor = analogRead(34);
+  Sensorvoltaje = (Sensorvalor/1023)*5;
+  radiacion = (Sensorvoltaje*11)/5;
+
+  Serial.print("La lectura del sensor es: ");
+  Serial.println(Sensorvalor);
+  Serial.print("El voltaje del sensor es: ");
+  Serial.println(Sensorvoltaje);
+  Serial.print("El indice de radiación es: ");
+  Serial.println(radiacion);
+  
+  if ((radiacion >=0)&&(radiacion<=2)) {
+    Serial.println("Bajo nivel de radiación UV");
+  }  
+  else if((radiacion >=3)&&(radiacion<=5)) {
+    Serial.println("Nivel UV medio, se recomiendan gafas de sol");
+  }
+  else if((radiacion >=6)&&(radiacion<=7)) {
+    Serial.println("Nivel alto, se recomiendan cremas protectoras");
+  }
+   else if((radiacion >= 8)&&(radiacion <=10)) {
+    Serial.println("Nivel muy alto, sombra recomendada");
+  }
+   else if(radiacion == 11) {
+    Serial.println("Nivel extremadamente alto de radiación UV, debe limitarse la exposición al aire libre");
+  }
+  else {
+    Serial.println("Error en la medición");
+  }
+  
+  Serial.println();
 }
 
 void funcion_dht22() {
-  hum_dht22 = dht.readHumidity(); 
-  temp_dht22 = dht.readTemperature();
+  //hum_dht22 = dht.readHumidity(); 
+  //temp_dht22 = dht.readTemperature();
 }
 
 void funcion_temperaturawire() {
-  sensorDS18B20.requestTemperatures();
-  temp_ds18b20 = sensorDS18B20.getTempCByIndex(0);
+  // Mandamos comandos para toma de temperatura a los sensores
+    sensorDS18B20.requestTemperatures();
+ 
+    // Leemos y mostramos los datos de los sensores DS18B20
+    Serial.print("Temperatura sensor 0: ");
+    Serial.print(sensorDS18B20.getTempCByIndex(0));
+    Serial.println(" C");
 }
