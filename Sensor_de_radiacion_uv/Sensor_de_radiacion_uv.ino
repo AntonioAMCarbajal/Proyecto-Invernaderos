@@ -19,7 +19,7 @@ void setup() {
 }
 
 void loop() {
-  Sensorvalor = analogRead(A0);
+  Sensorvalor = analogRead(34);
   Sensorvoltaje = (Sensorvalor/1023)*5;
   radiacion = (Sensorvoltaje*11)/5;
 
@@ -46,7 +46,7 @@ void loop() {
     Serial.println("Nivel extremadamente alto de radiación UV, debe limitarse la exposición al aire libre");
   }
   else {
-    Serial.println("Error en la medición")
+    Serial.println("Error en la medición");
   }
   
   Serial.println();

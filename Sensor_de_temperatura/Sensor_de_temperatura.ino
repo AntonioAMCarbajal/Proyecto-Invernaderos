@@ -14,7 +14,7 @@
 #include <DallasTemperature.h>
  
 // Pin donde se conecta el bus 1-Wire
-const int pinDatosDQ = 9;
+const int pinDatosDQ = 32;
  
 // Instancia a las clases OneWire y DallasTemperature
 OneWire oneWireObjeto(pinDatosDQ);

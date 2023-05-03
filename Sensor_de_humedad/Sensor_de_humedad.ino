@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
   Centro de Innovación e Integración de Tecnologías Avanzadas
   CIITA Unidad Veracruz
@@ -11,8 +10,6 @@
     Maria Isabel Cruz Solis
 */
 
-=======
->>>>>>> 9444711c8f08ff8128d0d726bc48314867d8b7f3
 const int aire_sensor = 1023;
 const int agua_sensor = 345;
 int sensor;
@@ -20,11 +17,10 @@ int salida;
 
 void setup() {
   Serial.begin(9600);
-  pinMode(A0,INPUT);
 }
 
 void loop() {
-  sensor = analogRead(A0);
+  sensor = analogRead(35);
   Serial.print("Valor detectado: ");
   Serial.println(sensor);
 
