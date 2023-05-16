@@ -53,7 +53,10 @@ Node-RED es una herramienta de programación gráfica para conectar dispositivos
 
 Para instalar en otros Sistemas Operativos: https://nodered.org/docs/getting-started/local
 
-#### 3.- Instalación de XAMPP
+#### 3.- Instalación de Node.JS
+Es necesaria la descarga e instalación del programa para ejecutar NODE-RED. Enlace: https://nodejs.org/es
+
+#### 4.- Instalación de XAMPP (NO LO INSTALES ISA)
 XAMPP es una distribución de Apache completamente gratuita y fácil de instalar que contiene MariaDB, PHP y Perl. El paquete de instalación de XAMPP ha sido diseñado para ser fácil de instalar y usar. Consulte el siguiente enlace: https://www.apachefriends.org/es/index.html
 
 ### Configuraciones previas al desarrollo del proyecto
