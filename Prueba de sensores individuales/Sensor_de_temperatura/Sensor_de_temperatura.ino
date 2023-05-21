@@ -6,7 +6,6 @@
   Codigo para probar el sensor de Temperatura DS18B20
 
   Elaborado por:
-    Antonio del Angel Moreno Carbajal
     Maria Isabel Cruz Solis
 */
 

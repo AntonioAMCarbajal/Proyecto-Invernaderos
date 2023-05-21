@@ -6,7 +6,6 @@
   Codigo para probar el sensor de radiación UV GUVA-S12SD
 
   Elaborado por:
-    Antonio del Angel Moreno Carbajal
     Maria Isabel Cruz Solis
 */
 

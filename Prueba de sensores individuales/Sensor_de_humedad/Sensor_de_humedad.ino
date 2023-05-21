@@ -6,12 +6,11 @@
   Codigo para probar el sensor de Humedad Capacitivo Anticorrosivo
 
   Elaborado por:
-    Antonio del Angel Moreno Carbajal
     Maria Isabel Cruz Solis
 */
 
-const int aire_sensor = 1023;
-const int agua_sensor = 345;
+const int aire_sensor = 4095;
+const int agua_sensor = 2981;
 int sensor;
 int salida;
 
@@ -28,7 +27,7 @@ void loop() {
     salida = map(sensor,aire_sensor,agua_sensor,0,100);
   }
   else {
-    //Serial.println("Error en la lectura.");
+    Serial.println("Error en la lectura.");
   }
 
   Serial.print("Porcentaje de Humedad: ");

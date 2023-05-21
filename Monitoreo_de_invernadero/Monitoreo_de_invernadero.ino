@@ -192,7 +192,7 @@ void callback(char* topic, byte* message, unsigned int length) {
 * para actuar segun lo necesiten al recibir un mensaje por MQTT
 */
    
-  // El ESP323CAM está suscrito al tema CIITA/VERACRUZ/CONTROL 
+  // El ESP32 está suscrito al tema CIITA/VERACRUZ/CONTROL 
   if (String(topic) == "CIITA/VERACRUZ/CONTROL") { 
     if(messageTemp == "true"){
       Serial.println("Led encendido");
