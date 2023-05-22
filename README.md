@@ -80,11 +80,11 @@ Por ultimo, es importante seleccionar la tarjeta de desarrollo DEVKIT V1 ESP32 e
 
 ### Codigo general
 
-El código global es el siguiente: [Monitoreo de invernadero](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/tree/main/Monitoreo_de_invernadero "Monitoreo de invernadero")
-Código para probar sensor de temperatura: [Codigo de sensor de temperatura DS18B20]()
-Código para probar sensor de humedad: [Codigo de sensor de humedad capacitivo](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Prueba%20de%20sensores%20individuales/Sensor_de_humedad/Sensor_de_humedad.ino)
-Código para probar sensor de radiación UV: [Codigo de sensor de intensidad de radiación UV](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Prueba%20de%20sensores%20individuales/Sensor_de_radiacion_uv/Sensor_de_radiacion_uv.ino) 
-Código para probar sensor de temperatura y humedad: [Codigo de sensor para temperatura y humedad DHT22](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Prueba%20de%20sensores%20individuales/Sensor_de_temperatura_y_humedad_DHT22/Sensor_de_temperatura_y_humedad_DHT22.ino)
+1. El código global es el siguiente: [Monitoreo de invernadero](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/tree/main/Monitoreo_de_invernadero "Monitoreo de invernadero")
+2. Código para probar sensor de temperatura: [Codigo de sensor de temperatura DS18B20]()
+3. Código para probar sensor de humedad: [Codigo de sensor de humedad capacitivo](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Prueba%20de%20sensores%20individuales/Sensor_de_humedad/Sensor_de_humedad.ino)
+4. Código para probar sensor de radiación UV: [Codigo de sensor de intensidad de radiación UV](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Prueba%20de%20sensores%20individuales/Sensor_de_radiacion_uv/Sensor_de_radiacion_uv.ino) 
+5. Código para probar sensor de temperatura y humedad: [Codigo de sensor para temperatura y humedad DHT22](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Prueba%20de%20sensores%20individuales/Sensor_de_temperatura_y_humedad_DHT22/Sensor_de_temperatura_y_humedad_DHT22.ino)
 
 ### Dashboard en Node-RED
 ![Visualización 1](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Visualizaci%C3%B3n%20de%20las%20variables%20atmosfericas_1.png)
