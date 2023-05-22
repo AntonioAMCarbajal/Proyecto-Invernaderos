@@ -27,10 +27,10 @@ Diseñar un sistema de monitoreo en un invernadero dentro del Centro de Innovaci
 
 ### Material
 1. Devkit ESP32 V1
-2. Sensor de temperatura
-3. Sensor de humedad
+2. Sensor de temperatura DS18B20
+3. Sensor de humedad capacitivo
 4. Sensor de radiación UV
-5. Placa fenolica
+5. Placa fenolica perforada
 6. Estaño
 7. Pasta para soldadura
 8. Cable
@@ -41,7 +41,7 @@ Diseñar un sistema de monitoreo en un invernadero dentro del Centro de Innovaci
 ### Diagrama de conexión
 El sistema en general se dividirá en 3 partes, siendo la primera la adquisición de las variables: temperatura, humedad y radiación dentro del tunel del invernadero. Esta información viajará hasta la segunda etapa, que es el procesamiento de la información a través de una tarjeta de desarrollo ESP32 que enviará la información por Wi-Fi gracias al protocolo de comunicación MQTT, elegido por el bajo consumo en recursos dentro del microcontrolador. Por ultimo, la etapa de visualización de la información por medio de un dashboard con graficas de las variables, las cuales se van almacenando en una base de datos. La siguiente figura ejemplifica el sistema:
 
-![Diagrama general del sistema](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Diagrama%20general%20del%20sistema.PNG)
+![Diagrama general del sistema](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Diagrama%20general%20del%20sistema.PNG)
 
 
 ### Instalación de programas utilizados en el proyecto
@@ -67,7 +67,7 @@ El primer paso para programar la ESP32 en arduino es dirigirse a la pestaña pri
 
 En la siguiente imagen se muestra el resultado de seguir estos pasos:
 
-![Administrador de tarjetas en arduino](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Administrador%20de%20tarjetas%20en%20arduino.PNG)
+![Administrador de tarjetas en arduino](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Administrador%20de%20tarjetas%20en%20arduino.PNG)
 
 Despues de colocar el enlace, es necesario ir al "manage board" de arduino que encontrará en la pestaña "" esto con el fin de descargar las tarjetas de desarrollo basadas en el módulo ESP32.
 ![Manage board]()
