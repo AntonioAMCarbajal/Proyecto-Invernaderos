@@ -95,5 +95,8 @@ Código para probar sensor de radiación UV:
 ### Pruebas
 
 ### Resultados
+![Visualización 1](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Visualizaci%C3%B3n%20de%20las%20variables%20atmosfericas_1.png)
+![Visualización 2](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Visualizaci%C3%B3n%20de%20las%20variables%20atmosfericas_2.png)
+![Visualización 3](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Visualizaci%C3%B3n%20de%20las%20variables%20atmosfericas_3.png)
 
 ## Conclusiones
