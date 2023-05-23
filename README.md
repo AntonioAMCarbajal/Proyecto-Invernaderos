@@ -88,13 +88,13 @@ Por ultimo, es importante seleccionar la tarjeta de desarrollo DEVKIT V1 ESP32 e
 5. Código para probar sensor de temperatura y humedad: [Codigo de sensor para temperatura y humedad DHT22](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Prueba%20de%20sensores%20individuales/Sensor_de_temperatura_y_humedad_DHT22/Sensor_de_temperatura_y_humedad_DHT22.ino)
 
 ### Dashboard en Node-RED
-![Visualización 1](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Visualizaci%C3%B3n%20de%20las%20variables%20atmosfericas_1.png)
-![Visualización 2](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Visualizaci%C3%B3n%20de%20las%20variables%20atmosfericas_2.png)
-![Visualización 3](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Visualizaci%C3%B3n%20de%20las%20variables%20atmosfericas_3.png)
+![Flujo del programa en NodeRed](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Flujo%20del%20programa%20en%20NodeRED.png)
 
 
 ### Pruebas
 
 ### Resultados
-
+![Visualización 1](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Visualizaci%C3%B3n%20de%20las%20variables%20atmosfericas_1.png)
+![Visualización 2](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Visualizaci%C3%B3n%20de%20las%20variables%20atmosfericas_2.png)
+![Visualización 3](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Visualizaci%C3%B3n%20de%20las%20variables%20atmosfericas_3.png)
 ## Conclusiones
