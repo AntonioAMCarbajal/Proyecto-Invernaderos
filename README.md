@@ -48,13 +48,14 @@ El sistema en general se dividirá en 3 partes, siendo la primera la adquisició
 #### 1.- Instalación de Arduino
 Arduino ofrece hardware y software, a través de tarjetas de desarrollo y entornos de desarrollo integrado, este ultimo se ha actualizado para permitir desarrollar código en placas de desarrollo diferentes, tal es el caso de las ESP32. La descarga del entorno de desarrollo Arduino IDE lo podrá encontrar en el siguiente enlace: https://www.arduino.cc/en/software
 
-#### 2.- Instalación de Node-RED
+#### 2.- Instalación de Node.JS
+Es necesaria la descarga e instalación del programa para ejecutar NODE-RED. Enlace: https://nodejs.org/es
+
+#### 3.- Instalación de Node-RED
 Node-RED es una herramienta de programación gráfica para conectar dispositivos de hardware, API y servicios en línea. Los pasos para instalar esta herramienta los encontrará en el siguiente enlace: https://nodered.org/docs/getting-started/windows
 
 Para instalar en otros Sistemas Operativos: https://nodered.org/docs/getting-started/local
 
-#### 3.- Instalación de Node.JS
-Es necesaria la descarga e instalación del programa para ejecutar NODE-RED. Enlace: https://nodejs.org/es
 
 ### Configuraciones previas al desarrollo del proyecto
 
@@ -66,8 +67,8 @@ En la siguiente imagen se muestra el resultado de seguir estos pasos:
 
 ![Administrador de tarjetas en arduino](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Administrador%20de%20tarjetas%20en%20arduino.PNG)
 
-Despues de colocar el enlace, es necesario ir al "manage board" de arduino que encontrará en la pestaña "" esto con el fin de descargar las tarjetas de desarrollo basadas en el módulo ESP32.
-![Manage board]()
+Despues de colocar el enlace, es necesario ir al "boards manager" de arduino que encontrará en la pestaña "" esto con el fin de descargar las tarjetas de desarrollo basadas en el módulo ESP32.
+![boards manager]()
 
 Por ultimo, es importante seleccionar la tarjeta de desarrollo DEVKIT V1 ESP32 en Arduino para cargar el código desarrollado en este proyecto.
 ![Selección de la tarjeta de desarrollo]()
