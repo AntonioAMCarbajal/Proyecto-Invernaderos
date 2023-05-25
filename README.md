@@ -27,10 +27,10 @@ Diseñar un sistema de monitoreo en un invernadero dentro del Centro de Innovaci
 
 ### Material
 1. Devkit ESP32 V1
-2. Sensor de temperatura
-3. Sensor de humedad
+2. Sensor de temperatura DS18B20
+3. Sensor de humedad capacitivo
 4. Sensor de radiación UV
-5. Placa fenolica
+5. Placa fenolica perforada
 6. Estaño
 7. Pasta para soldadura
 8. Cable
@@ -41,23 +41,21 @@ Diseñar un sistema de monitoreo en un invernadero dentro del Centro de Innovaci
 ### Diagrama de conexión
 El sistema en general se dividirá en 3 partes, siendo la primera la adquisición de las variables: temperatura, humedad y radiación dentro del tunel del invernadero. Esta información viajará hasta la segunda etapa, que es el procesamiento de la información a través de una tarjeta de desarrollo ESP32 que enviará la información por Wi-Fi gracias al protocolo de comunicación MQTT, elegido por el bajo consumo en recursos dentro del microcontrolador. Por ultimo, la etapa de visualización de la información por medio de un dashboard con graficas de las variables, las cuales se van almacenando en una base de datos. La siguiente figura ejemplifica el sistema:
 
-![Diagrama general del sistema](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Diagrama%20general%20del%20sistema.PNG)
+![Diagrama general del sistema](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Diagrama%20general%20del%20sistema.PNG)
 
 
 ### Instalación de programas utilizados en el proyecto
 #### 1.- Instalación de Arduino
 Arduino ofrece hardware y software, a través de tarjetas de desarrollo y entornos de desarrollo integrado, este ultimo se ha actualizado para permitir desarrollar código en placas de desarrollo diferentes, tal es el caso de las ESP32. La descarga del entorno de desarrollo Arduino IDE lo podrá encontrar en el siguiente enlace: https://www.arduino.cc/en/software
 
-#### 2.- Instalación de Node-RED
+#### 2.- Instalación de Node.JS
+Es necesaria la descarga e instalación del programa para ejecutar NODE-RED. Enlace: https://nodejs.org/es
+
+#### 3.- Instalación de Node-RED
 Node-RED es una herramienta de programación gráfica para conectar dispositivos de hardware, API y servicios en línea. Los pasos para instalar esta herramienta los encontrará en el siguiente enlace: https://nodered.org/docs/getting-started/windows
 
 Para instalar en otros Sistemas Operativos: https://nodered.org/docs/getting-started/local
 
-#### 3.- Instalación de Node.JS
-Es necesaria la descarga e instalación del programa para ejecutar NODE-RED. Enlace: https://nodejs.org/es
-
-#### 4.- Instalación de XAMPP (NO LO INSTALES ISA)
-XAMPP es una distribución de Apache completamente gratuita y fácil de instalar que contiene MariaDB, PHP y Perl. El paquete de instalación de XAMPP ha sido diseñado para ser fácil de instalar y usar. Consulte el siguiente enlace: https://www.apachefriends.org/es/index.html
 
 ### Configuraciones previas al desarrollo del proyecto
 
@@ -67,10 +65,10 @@ El primer paso para programar la ESP32 en arduino es dirigirse a la pestaña pri
 
 En la siguiente imagen se muestra el resultado de seguir estos pasos:
 
-![Administrador de tarjetas en arduino](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Administrador%20de%20tarjetas%20en%20arduino.PNG)
+![Administrador de tarjetas en arduino](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Administrador%20de%20tarjetas%20en%20arduino.PNG)
 
-Despues de colocar el enlace, es necesario ir al "manage board" de arduino que encontrará en la pestaña "" esto con el fin de descargar las tarjetas de desarrollo basadas en el módulo ESP32.
-![Manage board]()
+Despues de colocar el enlace, es necesario ir al "boards manager" de arduino que encontrará en la pestaña "" esto con el fin de descargar las tarjetas de desarrollo basadas en el módulo ESP32.
+![boards manager]()
 
 Por ultimo, es importante seleccionar la tarjeta de desarrollo DEVKIT V1 ESP32 en Arduino para cargar el código desarrollado en este proyecto.
 ![Selección de la tarjeta de desarrollo]()
@@ -83,17 +81,20 @@ Por ultimo, es importante seleccionar la tarjeta de desarrollo DEVKIT V1 ESP32 e
 
 ### Codigo general
 
-El código global es el siguiente:
-Código para probar sensor de temperatura:
-Código para probar sensor de humedad:
-Código para probar sensor de radiación UV: 
+1. El código global es el siguiente: [Monitoreo de invernadero](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/tree/main/Monitoreo_de_invernadero "Monitoreo de invernadero")
+2. Código para probar sensor de temperatura: [Codigo de sensor de temperatura DS18B20]()
+3. Código para probar sensor de humedad: [Codigo de sensor de humedad capacitivo](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Prueba%20de%20sensores%20individuales/Sensor_de_humedad/Sensor_de_humedad.ino)
+4. Código para probar sensor de radiación UV: [Codigo de sensor de intensidad de radiación UV](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Prueba%20de%20sensores%20individuales/Sensor_de_radiacion_uv/Sensor_de_radiacion_uv.ino) 
+5. Código para probar sensor de temperatura y humedad: [Codigo de sensor para temperatura y humedad DHT22](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Prueba%20de%20sensores%20individuales/Sensor_de_temperatura_y_humedad_DHT22/Sensor_de_temperatura_y_humedad_DHT22.ino)
 
 ### Dashboard en Node-RED
+![Flujo del programa en NodeRed](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Flujo%20del%20programa%20en%20NodeRED.png)
 
-### Base de datos 
 
 ### Pruebas
 
 ### Resultados
-
+![Visualización 1](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Visualizaci%C3%B3n%20de%20las%20variables%20atmosfericas_1.png)
+![Visualización 2](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Visualizaci%C3%B3n%20de%20las%20variables%20atmosfericas_2.png)
+![Visualización 3](https://github.com/AntonioAMCarbajal/Proyecto-Invernaderos/blob/main/Imagenes/Visualizaci%C3%B3n%20de%20las%20variables%20atmosfericas_3.png)
 ## Conclusiones
