@@ -7,7 +7,7 @@
  *  Maria Isabel Cruz Solis               Residente del departamento
  * 
  * Fecha:
- *  19/05/2023
+ *  24/05/2023
  * 
  * Descripción:
  *  El siguiente sistema realiza el monitoreo de un tunel del invernadero tecnificado ubicado en el CIITA Veracruz 
@@ -24,10 +24,10 @@
  */
 
 // Constantes
-#define DHTPIN 33                                                   // Conexión al pin 25 del esp32
+#define DHTPIN 32                                                   // Conexión al pin 32 del esp32
 #define DHTTYPE DHT22                                               // Sensor de temperatura y humedad DHT22
 #define sensor_hum 35                                               // Sensor de humedad capacitivo
-#define sensor_temp 32                                              // Sensor de temperatura DS18B20
+#define sensor_temp 33                                              // Sensor de temperatura DS18B20
 #define sensor_radiacion 34                                         // Sensor de radiación UV
 #define LED 2                                                       // LED de la esp32
 
@@ -46,12 +46,12 @@ OneWire oneWireObjeto(sensor_temp);                                 // Este obje
 DallasTemperature sensorDS18B20(&oneWireObjeto);                    // Este objeto maneja el sensor DS18B20
 
 // Datos de WiFi a conectar
-const char* ssid = "";                                              // Aquí se debe poner el nombre de la red
-const char* password = "";                                          // Aquí se debe poner la contraseña de la red
+const char* ssid = "Invernadero_Tecnificado_CIITA";                                              // Aquí se debe poner el nombre de la red
+const char* password = "ciitaver2";                                          // Aquí se debe poner la contraseña de la red
 
 // Datos de la conexión a broker MQTT
-const char* mqtt_server = "";                                       // Colocar IP del servidor (computadora) ejemplo: "192.168.137.1" 
-IPAddress server ();                                                // Colocar IP del servidor (computadora) ejemplo: (192,168,137,1)
+const char* mqtt_server = "192.168.0.100";                                       // Colocar IP del servidor (computadora) ejemplo: "192.168.137.1" 
+IPAddress server (192,168,0,100);                                                // Colocar IP del servidor (computadora) ejemplo: (192,168,137,1)
 
 // Variables del sensor de radiacion
 float Sensorvalor = 0.0;
