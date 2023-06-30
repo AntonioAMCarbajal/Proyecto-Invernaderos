@@ -1,14 +1,3 @@
-/*
-  Centro de Innovación e Integración de Tecnologías Avanzadas
-  CIITA Unidad Veracruz
-  Fecha: 17 de abril de 2023
-  
-  Codigo para probar el sensor de Temperatura DS18B20
-
-  Elaborado por:
-    Maria Isabel Cruz Solis
-*/
-
 #include <OneWire.h>
 #include <DallasTemperature.h>
  

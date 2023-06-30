@@ -1,14 +1,3 @@
-/*
-  Centro de Innovación e Integración de Tecnologías Avanzadas
-  CIITA Unidad Veracruz
-  Fecha: 17 de abril de 2023
-  
-  Codigo para probar el sensor de Humedad Capacitivo Anticorrosivo
-
-  Elaborado por:
-    Maria Isabel Cruz Solis
-*/
-
 const int aire_sensor = 4095;
 const int agua_sensor = 2981;
 int sensor;

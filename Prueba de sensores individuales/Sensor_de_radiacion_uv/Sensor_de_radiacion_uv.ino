@@ -1,14 +1,3 @@
-/*
-  Centro de Innovación e Integración de Tecnologías Avanzadas
-  CIITA Unidad Veracruz
-  Fecha: 17 de abril de 2023
-  
-  Codigo para probar el sensor de radiación UV GUVA-S12SD
-
-  Elaborado por:
-    Maria Isabel Cruz Solis
-*/
-
 float Sensorvalor;
 float Sensorvoltaje;
 int radiacion;

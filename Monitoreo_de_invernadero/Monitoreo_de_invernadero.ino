@@ -1,28 +1,3 @@
-/*
- * Centro de Innovación e Integración de Tecnologías Avanzadas
- * Unidad Veracruz
- * Coordinación de Investigación Aplicada
- * 
- * Elaborado por:
- *  Maria Isabel Cruz Solis               Residente del departamento
- * 
- * Fecha:
- *  24/05/2023
- * 
- * Descripción:
- *  El siguiente sistema realiza el monitoreo de un tunel del invernadero tecnificado ubicado en el CIITA Veracruz 
- *  
- * Componentes:
- *  Tarjeta de desarroollo ESP32
- *  Sensor de humedad capacitivo
- *  Sensor de radiación UV
- *  Sensor de temperatura DHT22
- *  Sensor de temperatura DS18B20
- *
- * Tipo de conexión:
- *  Inalambrica (Wi-FI)
- */
-
 // Constantes
 #define DHTPIN 32                                                   // Conexión al pin 32 del esp32
 #define DHTTYPE DHT22                                               // Sensor de temperatura y humedad DHT22
