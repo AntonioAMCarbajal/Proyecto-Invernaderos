@@ -25,7 +25,7 @@ const char* ssid = "Invernadero_Tecnificado_CIITA";                             
 const char* password = "ciitaver2";                                          // Aquí se debe poner la contraseña de la red
 
 // Datos de la conexión a broker MQTT
-const char* mqtt_server = "192.168.0.100";   //.100                                    // Colocar IP del servidor (computadora) ejemplo: "192.168.137.1" 
+const char* mqtt_server = "192.168.0.100";                                       // Colocar IP del servidor (computadora) ejemplo: "192.168.137.1" 
 IPAddress server (192,168,0,100);                                                // Colocar IP del servidor (computadora) ejemplo: (192,168,137,1)
 
 // Variables del sensor de radiacion
