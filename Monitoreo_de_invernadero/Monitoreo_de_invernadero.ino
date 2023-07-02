@@ -51,7 +51,7 @@ int flashLedPin = 4;                                                // Para indi
 int statusLedPin = 3;                                               // Para ser controlado por MQTT
 long timeNow, timeLast;                                             // Variables de control de tiempo no bloqueante
 int data = 0;                                                       // Contador
-int wait = 5000;                                                    // Indica la espera cada 5 segundos para envío de mensajes MQTT
+int wait = 3600000;                                                 // Indica la espera cada hora para envío de mensajes MQTT
 int t;
 
 // Variable a enviar a Node-RED
