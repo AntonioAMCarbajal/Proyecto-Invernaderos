@@ -1,3 +1,10 @@
+/* Descomentar para usar la pantalla integrada al LILYGO
+* #define OLED_SDA 4
+* #define OLED_SCL 15 
+* #define OLED_RST 16
+* #define SCREEN_WIDTH 128                                          // Ancho del display en pixels
+* #define SCREEN_HEIGHT 32                                          // Alto del distlay en pixels
+*/
 #define SCK 5                                                       // Definicion de los pines usados por LoRa
 #define MISO 19
 #define MOSI 27
@@ -5,29 +12,27 @@
 #define RST 14
 #define DIO0 26
 #define BAND 433E6                                                  // 433E6 for Asia, 866E6 for Europe, 915E6 for North America
-#define OLED_SDA 4                                                  // Pines para pantalla OLED
-#define OLED_SCL 15 
-#define OLED_RST 16
-#define SCREEN_WIDTH 128                                            // Ancho del display en pixeles
-#define SCREEN_HEIGHT 32                                            // Alto del display en pixeles 
 
+/* Descomentar para usar la pantalla integrada al LILYGO
+* #include <Adafruit_GFX.h>
+* #include <Adafruit_SSD1306.h>
+*/
 #include <SPI.h>                                                    // Librerias para LoRa
 #include <LoRa.h>                                                   // Librerias para LoRa
 #include <WiFi.h>                                                   // Biblioteca para el control de WiFi
 #include <PubSubClient.h>                                           // Biblioteca para conexion MQTT 
-#include <Adafruit_GFX.h>                                           // Libraries for OLED Display
-#include <Adafruit_SSD1306.h>
 
 // Datos de WiFi a conectar
 const char* ssid = "INFINITUM5DFA";                                 // Aquí se debe poner el nombre de la red
 const char* password = "AxF3sQtnzL";                                // Aquí se debe poner la contraseña de la red
 
 // Datos de la conexión a broker MQTT
-const char* mqtt_server = "192.168.1.72";                           // Colocar IP del servidor (computadora) ejemplo: "192.168.137.1" 
-IPAddress server (192,168,1,72);
+const char* mqtt_server = "192.168.1.67";                           // Colocar IP del servidor (computadora) ejemplo: "192.168.137.1" 
+IPAddress server (192,168,1,67);
 
-// Objetos del programa
-Adafruit_SSD1306 display = Adafruit_SSD1306(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire);
+/* Descomentar para usar la pantalla integrada al LILYGO
+* Adafruit_SSD1306 display = Adafruit_SSD1306(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire);
+*/
 WiFiClient espClient;                                               // Este objeto maneja los datos de conexion WiFi
 PubSubClient client(espClient);                                     // Este objeto maneja los datos de conexion al broker
 String LoRaData, json;
@@ -36,29 +41,29 @@ void setup() {
   Serial.begin(115200);                                             // Iniciando el puerto serial de la ESP32
   Serial.println("LoRa Receiver Test");
   
-  //initialize OLED
-  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
-  display.clearDisplay();
-  display.setTextColor(WHITE);
-  display.setTextSize(1);
-  display.setCursor(0,0);
-  display.print("LORA RECEIVER ");
-  display.display();
+  /* Descomentar para iniciar el display del LILYGO
+  * display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+  * display.clearDisplay();
+  * display.setTextColor(WHITE);
+  * display.setTextSize(1);
+  * display.setCursor(0,0);
+  * display.print("LORA RECEIVER ");
+  * display.display();
+  */
 
-  //SPI LoRa pins
-  SPI.begin(SCK, MISO, MOSI, SS);
-  //setup LoRa transceiver module
-  LoRa.setPins(SS, RST, DIO0);
+  SPI.begin(SCK, MISO, MOSI, SS);                                           // Pines SPI del LoRa
+  LoRa.setPins(SS, RST, DIO0);                                              // Configuración del transmisor LoRa
 
   if (!LoRa.begin(BAND)) {
     Serial.println("Starting LoRa failed!");
     while (1);
   }
   Serial.println("LoRa Initializing OK!");
-  display.setCursor(0,10);
-  display.println("LoRa Inicializacion OK!");
-  display.display();
-  
+  /* Descomentar para escribir un mensaje en pantalla del módulo LILYGO
+  * display.setCursor(0,10);
+  * display.println("LoRa Inicializacion OK!");
+  * display.display();
+  */
   Serial.println();                                                 // Imprimiendo en puerto serial la conexión al WiFi
   Serial.println();                                                  
   Serial.print("Conectar a ");
@@ -96,13 +101,14 @@ void loop() {
     while (LoRa.available()) {
       LoRaData = LoRa.readString();
     }
-
-    display.clearDisplay();
-    display.setCursor(0,0);
-    display.print("Mensaje recibido:");
-    display.setCursor(0,10);
-    display.print(LoRaData);
-    display.display();    
+    /* Descomentar para escribir un mensaje en pantalla del módulo LILYGO
+    * display.clearDisplay();
+    * display.setCursor(0,0);
+    * display.print("Mensaje recibido:");
+    * display.setCursor(0,10);
+    * display.print(LoRaData);
+    * display.display();    
+    */
     json = LoRaData;
     Serial.println(json);                                         // Se imprime en monitor solo para poder visualizar que el string esta correctamente formado
     int str_len = json.length() + 1;                              // Se calcula la longitud del string
